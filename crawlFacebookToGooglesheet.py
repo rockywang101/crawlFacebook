@@ -49,7 +49,7 @@ def crawlFanpageData(fanPageId):
     url = 'https://graph.facebook.com/v2.10/{}?fields={}&access_token={}'.format(fanPageId, fields, os.environ["FACEBOOK_ACCESS_TOKEN"])
     print("GET %s" %(url))
     js = json.loads(requests.get(url).text)
-    print(js)
+#     print(js)
     
     rowList = []
     for data in js["posts"]["data"]:
