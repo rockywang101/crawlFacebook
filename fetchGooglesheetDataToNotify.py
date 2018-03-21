@@ -31,7 +31,8 @@ def main():
         
         # update notify status
         for row in rowList:
-            row[0] = "Y"
+            if row[0] == "N":
+                row[0] = "Y"
         
         rowList = sheetService.updateSheet(rangeName, rowList)
     
