@@ -5,7 +5,6 @@ Created on 2018年3月19日
 @author: rocky.wang
 '''
 from googleService import GooglesheetService
-import GmailService
 import requests
 import json, os
 import lineTool
@@ -46,7 +45,7 @@ def rowListToMessageAndNotify(rowList, rangeName):
         message += row[3] + "\n原文連結: " + row[4] + "\n\n"
 
         print("Notify message-----\n", message)
-        lineTool.lineNotify(os.environ["LINE_TEST_TOKEN"], message)
+        lineTool.lineNotify(os.environ["LINE_FANS_TOKEN"], message)
         time.sleep(5)
 
 #     html = message.replace("\n", "<br/>")
