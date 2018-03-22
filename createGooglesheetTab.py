@@ -1,6 +1,8 @@
 '''
 檢查粉絲頁列表，建立尚未建立的 sheet
 
+https://docs.google.com/spreadsheets/d/1bydUUYVTxyyz2jxm3JRzIQkdElNthLHuQpzW6-DLVUk/edit#gid=1244591370
+
 Created on 2018年3月19日
 @author: rocky.wang
 '''
