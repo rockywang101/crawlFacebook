@@ -43,7 +43,7 @@ def rowListToMessageAndNotify(rowList, rangeName):
         print(row)
         dt = row[1][0:10] + " " + row[1][11:16]
         message = "------------------------------------------\n[%s] [%s]\n------------------------------------------\n" %(rangeName, dt)
-        message += row[3] + "\n原文連結: " + row[4] + "\n\n"
+        message += row[3] + "\n\n原文連結: " + row[4] + "\n\n"
 
         print("Notify message-----\n", message)
         lineTool.lineNotify(os.environ["LINE_FANS_TOKEN"], message)
