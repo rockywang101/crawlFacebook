@@ -48,6 +48,8 @@ def rowListToMessageAndNotify(rowList, rangeName):
         print("Notify message-----\n", message)
         lineTool.lineNotify(os.environ["LINE_FANS_TOKEN"], message)
         time.sleep(5)
+        lineTool.lineNotify(os.environ["LINE_FANS_TOKEN2"], message)
+        time.sleep(5)
 
 #     html = message.replace("\n", "<br/>")
 #     print(html)
