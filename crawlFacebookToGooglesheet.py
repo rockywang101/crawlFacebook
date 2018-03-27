@@ -5,6 +5,7 @@ Created on 2018年3月19日
 @author: rocky.wang
 '''
 from googleService import GooglesheetService
+import time
 
 '''
 Created on 2018年3月13日
@@ -22,6 +23,7 @@ def main():
         fanPageId = row[1]
         rangeName = row[2]
         fetchFanPage(fanPageId, rangeName)
+        time.sleep(1) # 不睡似乎也不會怎麼樣，但反正一小時一次而已，睡一下比較安全
 
 def fetchFanPage(fanPageId, rangeName):
     
