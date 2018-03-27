@@ -40,12 +40,15 @@ def main():
 def rowListToMessageAndNotify(rowList, rangeName):
     
     for row in rowList:
-        print(row)
-        dt = row[1][0:10] + " " + row[1][11:16]
-        message = "------------------------------------------\n[%s] [%s]\n------------------------------------------\n" %(rangeName, dt)
+
+        # 因為時間看起來是美國時間，還要再自己加 8，先拿掉時間顯示
+#         dt = row[1][0:10] + " " + row[1][11:16]
+#         message = "------------------------------------------\n[%s] [%s]\n------------------------------------------\n" %(rangeName, dt)
+
+        message = "\n[%s]\n------------------------------------------\n" %(rangeName)
         message += row[3] + "\n原文連結: " + row[4] + "\n\n"
 
-        print("Notify message-----\n", message)
+#         print("Notify message-----\n", message)
         lineTool.lineNotify(os.environ["LINE_FANS_TOKEN"], message)
         time.sleep(5)
 
