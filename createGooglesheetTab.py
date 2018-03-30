@@ -52,7 +52,7 @@ def createSheetIfNotExist(rowList):
             print("create sheet named %s" %(js["name"]))
             googlesheetService.addSheet(js["name"])
             
-            googlesheetService.appendSheet(js["name"], [["已通知", "建立時間", "文章ID", "內容", "原始連結"]])
+            googlesheetService.appendSheet(js["name"], [["已通知", "建立時間", "文章ID", "內容", "原始連結", "連結"]])
         
         row.append(fanPageId)
         row.append(js["name"])

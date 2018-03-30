@@ -38,16 +38,18 @@ def fetchFanPage(fanPageId, rangeName):
     rowList.reverse()
     
     print("New Post to write amount ", len(rowList))
-    for row in rowList:
-        print(row)
 
     # 寫入 google sheet
     sheetService.appendSheet(rangeName, rowList)
     
-    
+
+'''
+permalink_url 為粉絲頁文章原始連結
+link 為文章張貼的連結 (因為後來才加上去，放在最後面)
+'''
 def crawlFanpageData(fanPageId):
     
-    fields = "id, name, posts{id,name,message,created_time,permalink_url}"
+    fields = "id, name, posts{id,name,message,created_time,link,permalink_url}"
     url = 'https://graph.facebook.com/v2.10/{}?fields={}&access_token={}'.format(fanPageId, fields, os.environ["FACEBOOK_ACCESS_TOKEN"])
     print("GET %s" %(url))
     js = json.loads(requests.get(url).text)
@@ -59,7 +61,7 @@ def crawlFanpageData(fanPageId):
 #             data["message"] =  "分享了 " + data["name"] + " 的資料" 
             data["message"] =  "分享了資料"
             
-        rowList.append(["N", data["created_time"], data["id"], data['message'], data["permalink_url"]])
+        rowList.append(["N", data["created_time"], data["id"], data['message'], data["permalink_url"], data.get("link", "")])
     return rowList
 
 

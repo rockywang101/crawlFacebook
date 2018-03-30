@@ -46,17 +46,15 @@ def rowListToMessageAndNotify(rowList, rangeName):
 #         message = "------------------------------------------\n[%s] [%s]\n------------------------------------------\n" %(rangeName, dt)
 
         message = "\n[%s]\n------------------------------------------\n" %(rangeName)
-        message += row[3] + "\n\n原文連結: " + row[4] + "\n\n"
+        message += row[3] + "\n\n" + row[5] + "\n\n原文連結: " + row[4] + "\n\n"
 
-#         print("Notify message-----\n", message)
         lineTool.lineNotify(os.environ["LINE_FANS_TOKEN"], message)
         time.sleep(5)
         lineTool.lineNotify(os.environ["LINE_FANS_TOKEN2"], message)
         time.sleep(5)
-#     html = message.replace("\n", "<br/>")
-#     print(html)
-#     GmailService.sendMail(html)
-    
+
+#         lineTool.lineNotify(os.environ["LINE_TEST_TOKEN"], message)
+        
 
 if __name__ == "__main__":
     main()
