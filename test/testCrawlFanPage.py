@@ -3,7 +3,7 @@ Created on 2018年3月20日
 @author: rocky.wang
 '''
 import json, os, requests
-from _sqlite3 import Row
+
 
 def main():
     
@@ -11,11 +11,15 @@ def main():
     rowList = crawlFanpageData(fanPageId)
     
     for row in rowList:
-        
         if row[4] == None:
             print(row)
 
 
+'''
+link 為文章內的超連結
+permalink_url 為粉絲頁貼文的原始連結
+create_time 看起來是美國時間，台灣應該要自己再 +8
+'''
 def crawlFanpageData(fanPageId):
     
     fields = "id, name, posts{id,name,message,created_time,link,permalink_url}"
