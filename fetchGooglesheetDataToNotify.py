@@ -53,9 +53,11 @@ def rowListToMessageAndNotify(rowList, rangeName):
             message += row[3] + "\n\n原文連結: " + row[4]
 
         lineTool.lineNotify(os.environ["LINE_FANS_TOKEN"], message)
-        time.sleep(5)
+        time.sleep(3)
         lineTool.lineNotify(os.environ["LINE_FANS_TOKEN2"], message)
-        time.sleep(5)
+        time.sleep(3)
+        lineTool.lineNotify(os.environ["LINE_FANS_TOKEN3"], message)
+        time.sleep(3)
 
 #         lineTool.lineNotify(os.environ["LINE_TEST_TOKEN"], message)
         
