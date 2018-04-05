@@ -12,10 +12,10 @@ import os
 if __name__ == "__main__":
     try:
         # 檢查是否有新分頁需要建立
-        createGooglesheetTab.main()
+#         createGooglesheetTab.main()
     
         # 爬粉絲頁資料到存放節 google sheet
-        crawlFacebookToGooglesheet.main()
+#         crawlFacebookToGooglesheet.main()
         
         # 進行通知
         fetchGooglesheetDataToNotify.main()

@@ -51,11 +51,8 @@ def crawlFanpageData(fanPageId):
     
     print(os.environ["FACEBOOK_ACCESS_TOKEN"])
     
-    token = os.environ["FACEBOOK_ACCESS_TOKEN"]
+    token = "EAACEdEose0cBAMFOfQ3lTTH3ByrbzuNuHa9XIfnZCZB0ZAH6ZBaUM3QKWwJ8mzaI02En0LG0wga01CpRJ8k23vXOVFQuqd9tZAPoPEvAqHZCs7XMAYxBZAxqLuDFNlWw6fZAzW0eicbMy4j2lLRQe5kZCOj0eJ2LRDntFZAAZAA87Aa3qmCguTuAUSxHdgZAF1kTgX74ceykaKVZBCQZDZD"
     
-    token = "EAACEdEose0cBAA8J07eM5k8Gz70oSOJl3YZB5fmdBI4VZA4ImudEPXLTp1ty33L8xocpPGZA0LenWbLoZCWkaU5HOIbKVKngZBHUxwa3iSOlTP5gCWZBxCHh2S69ylArjZB1JUEVAzhIqrPtqyvQ2hVZCAA7vLj66bjxSnr38Iaiv7tYD3wRC7KwBsAPZB4NvE2gjvp2n3t9ygAZDZD"
-    
-#     token = "EAACEdEose0cBAEtuXs1XZB0G46eVx6Bu58B3taQxrWGOWnZA41rkA8WRkRLQZBntPwhFBckERRFbWRYvlra5OZCJeCduBnQ9FO5D2nSuqmrZA4UTgzAfAarC5pXzhsz4r24ZCiEy46ZAMfaKaok6AX1HTs7ZAlKgvnIElKO0pZBrqUCAnlAN1wOZCEvgPKnD8Q420ZD"
     fields = "id, name, posts{id,name,message,created_time,link,permalink_url}"
     url = 'https://graph.facebook.com/v2.10/{}?fields={}&access_token={}'.format(fanPageId, fields, token)
     print("GET %s" %(url))
