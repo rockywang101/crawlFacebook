@@ -52,13 +52,24 @@ def rowListToMessageAndNotify(rowList, rangeName):
         else:
             message += row[3] + "\n\n原文連結: " + row[4]
 
-        lineTool.lineNotify(os.environ["LINE_FANS_TOKEN"], message)
-        time.sleep(3)
-        lineTool.lineNotify(os.environ["LINE_FANS_TOKEN2"], message)
-        time.sleep(3)
-        lineTool.lineNotify(os.environ["LINE_FANS_TOKEN3"], message)
-        time.sleep(3)
+#         lineTool.lineNotify(os.environ["LINE_FANS_TOKEN"], message)
+#         time.sleep(3)
+#         lineTool.lineNotify(os.environ["LINE_FANS_TOKEN2"], message)
+#         time.sleep(3)
+#         lineTool.lineNotify(os.environ["LINE_FANS_TOKEN3"], message)
+#         time.sleep(3)
 
+        lineTool.lineNotify(os.environ["LINE_0050_TOKEN"], message)
+        time.sleep(2)   # delays for n seconds
+        lineTool.lineNotify(os.environ["LINE_0050_TOKEN2"], message)
+        time.sleep(2)
+        lineTool.lineNotify(os.environ["LINE_0050_TOKEN3"], message)
+        time.sleep(2)
+        lineTool.lineNotify(os.environ["LINE_0050_TOKEN4"], message)
+        time.sleep(2)
+        lineTool.lineNotify(os.environ["LINE_0050_TOKEN5"], message)
+        time.sleep(2)
+        
 #         lineTool.lineNotify(os.environ["LINE_TEST_TOKEN"], message)
         
 
