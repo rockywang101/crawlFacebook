@@ -49,11 +49,18 @@ link 為文章張貼的連結 (因為後來才加上去，放在最後面)
 '''
 def crawlFanpageData(fanPageId):
     
+    print(os.environ["FACEBOOK_ACCESS_TOKEN"])
+    
+    token = os.environ["FACEBOOK_ACCESS_TOKEN"]
+    
+    token = "EAACEdEose0cBAA8J07eM5k8Gz70oSOJl3YZB5fmdBI4VZA4ImudEPXLTp1ty33L8xocpPGZA0LenWbLoZCWkaU5HOIbKVKngZBHUxwa3iSOlTP5gCWZBxCHh2S69ylArjZB1JUEVAzhIqrPtqyvQ2hVZCAA7vLj66bjxSnr38Iaiv7tYD3wRC7KwBsAPZB4NvE2gjvp2n3t9ygAZDZD"
+    
+#     token = "EAACEdEose0cBAEtuXs1XZB0G46eVx6Bu58B3taQxrWGOWnZA41rkA8WRkRLQZBntPwhFBckERRFbWRYvlra5OZCJeCduBnQ9FO5D2nSuqmrZA4UTgzAfAarC5pXzhsz4r24ZCiEy46ZAMfaKaok6AX1HTs7ZAlKgvnIElKO0pZBrqUCAnlAN1wOZCEvgPKnD8Q420ZD"
     fields = "id, name, posts{id,name,message,created_time,link,permalink_url}"
-    url = 'https://graph.facebook.com/v2.10/{}?fields={}&access_token={}'.format(fanPageId, fields, os.environ["FACEBOOK_ACCESS_TOKEN"])
+    url = 'https://graph.facebook.com/v2.10/{}?fields={}&access_token={}'.format(fanPageId, fields, token)
     print("GET %s" %(url))
     js = json.loads(requests.get(url).text)
-#     print(js)
+    print(js)
     
     rowList = []
     for data in js["posts"]["data"]:
@@ -62,6 +69,7 @@ def crawlFanpageData(fanPageId):
             data["message"] =  "分享了資料"
             
         rowList.append(["N", data["created_time"], data["id"], data['message'], data["permalink_url"], data.get("link", "")])
+        
     return rowList
 
 
