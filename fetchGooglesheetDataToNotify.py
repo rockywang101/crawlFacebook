@@ -69,6 +69,8 @@ def rowListToMessageAndNotify(rowList, rangeName):
         time.sleep(2)
         lineTool.lineNotify(os.environ["LINE_0050_TOKEN5"], message)
         time.sleep(2)
+        lineTool.lineNotify(os.environ["LINE_0050_TOKEN6"], message)
+        time.sleep(2)
         
 #         lineTool.lineNotify(os.environ["LINE_TEST_TOKEN"], message)
         

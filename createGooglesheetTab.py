@@ -42,8 +42,9 @@ def createSheetIfNotExist(rowList):
         if "-" in fanPageId:
             fanPageId = fanPageId.split("-")[-1]
 
+        token = "EAACEdEose0cBAGxSzR1WQXDWMORCkvgoaSAYZAZBsSkyurqskXTcoZBH16ECO3pGz4LIxrU2sF5iwM50zGerZB53liZCV6Jv4WShlsgFPiIStZAx6tQ1s8NRcPtX4N9dWcFq5Q0IVZBHExa4u47RxvRjWJxCckD88ulZA83EcGCIqQwzvBwcY5YaZBy3XNZCmmM5JxqZBDVZA9CNBQZDZD"
         fields = "id, name"
-        url = 'https://graph.facebook.com/v2.10/{}?fields={}&access_token={}'.format(fanPageId, fields, os.environ["FACEBOOK_ACCESS_TOKEN"])
+        url = 'https://graph.facebook.com/v2.10/{}?fields={}&access_token={}'.format(fanPageId, fields, token)
  
         response = requests.get(url)
         js = json.loads(response.text)

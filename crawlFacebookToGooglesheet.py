@@ -51,7 +51,7 @@ def crawlFanpageData(fanPageId):
     
     print(os.environ["FACEBOOK_ACCESS_TOKEN"])
     
-    token = "EAACEdEose0cBAMFOfQ3lTTH3ByrbzuNuHa9XIfnZCZB0ZAH6ZBaUM3QKWwJ8mzaI02En0LG0wga01CpRJ8k23vXOVFQuqd9tZAPoPEvAqHZCs7XMAYxBZAxqLuDFNlWw6fZAzW0eicbMy4j2lLRQe5kZCOj0eJ2LRDntFZAAZAA87Aa3qmCguTuAUSxHdgZAF1kTgX74ceykaKVZBCQZDZD"
+    token = "EAACEdEose0cBAIk2ifpuVkJlt5D7yxxbh61H0mCgZBZAZA3FVb9J0inwlZAg1xvZBuBBBC9RLXYSEGqBYZC7LHHeZA4HrhEkeAjU6Pd93pjhhxZCfqrJCaWBdJNm7rlpP1znflDsSdJJVou86EGyITnn1a0nqC8BWkxF43ZA10n4teCFaLMrIFsphimsii9ZCRZB2lDVENAkYG7oQZDZD"
     
     fields = "id, name, posts{id,name,message,created_time,link,permalink_url}"
     url = 'https://graph.facebook.com/v2.10/{}?fields={}&access_token={}'.format(fanPageId, fields, token)
