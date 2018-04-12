@@ -9,11 +9,13 @@ import requests
 import json, os
 import lineTool
 import time
+import datetime
 
 sheetService = GooglesheetService("1bydUUYVTxyyz2jxm3JRzIQkdElNthLHuQpzW6-DLVUk")
 
 
 def main():
+    print("\n執行時間 {}".format(datetime.datetime.now().strftime('%Y/%m%d %H:%M:%S')))
     
     for rangeName in sheetService.getRangeNameList():
         
