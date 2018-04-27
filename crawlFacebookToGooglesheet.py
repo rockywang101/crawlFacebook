@@ -52,9 +52,6 @@ link 為文章張貼的連結 (因為後來才加上去，放在最後面)
 '''
 def crawlFanpageData(fanPageId, token):
     
-#     print(os.environ["FACEBOOK_ACCESS_TOKEN"])
-#     token = "EAACEdEose0cBAOBGwisffpqJznCSvW2qzLHruyTKYyrZB91NTmVVsUx0ALau7qcdqAxMPWLkCQg4bHFz2ZAONb3QwlaLl6BHwHjKSuvsiIWxOZAQ0JUQb8lis1IpO5fUb6IDoMQODPIiGCiGrjGOVkP9h3i96l8ScgHT5ZBZCf07igFpMcIibGqeTWysuTBfzkGqIvS8BdwZDZD"
-    
     fields = "id, name, posts{id,name,message,created_time,link,permalink_url}"
     url = 'https://graph.facebook.com/v2.10/{}?fields={}&access_token={}'.format(fanPageId, fields, token)
     print("GET %s" %(url))
